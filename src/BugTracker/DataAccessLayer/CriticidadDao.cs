@@ -24,15 +24,10 @@ namespace BugTracker.DataAccessLayer
             List<Criticidad> criticidades = new List<Criticidad>();
 
             var strSql = String.Concat("SELECT c.id_criticidad, c.nombre ",
-                                        " FROM Criticidades c ",
-                                        " WHERE c.borrado = "
-                                        );
-            if (incluyeBorrados)
+                                        " FROM Criticidades c ");
+            if (!incluyeBorrados)
             {
-                strSql += "'true'";
-            }
-            else {
-                strSql += "'false'";
+                strSql += " WHERE c.borrado = 'false' ";
             }
 
             var resultadoConsulta = (DataRowCollection) DataManager.GetInstance().ConsultaSQL(strSql).Rows;

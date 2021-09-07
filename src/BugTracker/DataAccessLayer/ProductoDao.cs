@@ -23,15 +23,10 @@ namespace BugTracker.DataAccessLayer
         {
             List<Producto> productos = new List<Producto>();
             var strSql = String.Concat(" SELECT p.id_producto, p.nombre ",
-                                        " FROM Productos p ",
-                                        " WHERE p.borrado = "    );
-            if (incluyeBorrados)
+                                        " FROM Productos p ");
+            if (!incluyeBorrados)
             {
-                strSql += "'true'";
-            }
-            else
-            {
-                strSql += "'false'";
+                strSql += " WHERE p.borrado = 'false' ";
             }
 
             var resultado =  (DataRowCollection) DataManager.GetInstance().ConsultaSQL(strSql).Rows;

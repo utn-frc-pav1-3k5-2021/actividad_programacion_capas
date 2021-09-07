@@ -24,16 +24,10 @@ namespace BugTracker.DataAccessLayer
             List<Estado> estados = new List<Estado>();
 
             var strSql = String.Concat("SELECT e.id_estado, e.nombre ",
-                                        " FROM Estados e ",
-                                        " WHERE e.borrado = "
-                                        );
-            if (incluyeBorrados)
+                                        " FROM Estados e ");
+            if (!incluyeBorrados)
             {
-                strSql += "'true'";
-            }
-            else
-            {
-                strSql += "'false'";
+                strSql += " WHERE e.borrado = 'false' ";
             }
 
             var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql).Rows;

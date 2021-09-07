@@ -18,6 +18,9 @@ namespace BugTracker.GUILayer
         private CriticidadService criticidadService;
         private ProductoService productoService;
         private EstadoService estadoService;
+        private PrioridadService prioridadService;
+        private UsuarioService usuarioService;
+
         public frmConsultaBugs()
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace BugTracker.GUILayer
             criticidadService = new CriticidadService();
             productoService = new ProductoService();
             estadoService = new EstadoService();
+            prioridadService = new PrioridadService();
+            usuarioService = new UsuarioService();
         }
 
         private void frmBugs_Load(object sender, EventArgs e)
@@ -35,11 +40,11 @@ namespace BugTracker.GUILayer
             //LLenar combos y limpiar grid
             LlenarCombo(cboEstados, estadoService.GetListEstados(false), "Nombre", "IdEstado");
 
-            LlenarCombo(cboPrioridades, DataManager.GetInstance().ConsultaSQL("Select * from Prioridades"), "nombre", "id_prioridad");
+            LlenarCombo(cboPrioridades, prioridadService.GetListPrioridades(false), "Nombre", "IdPrioridad");
 
             LlenarCombo(cboCriticidades, criticidadService.GetListCriticidades(false), "Nombre", "IdCriticidad");
 
-            LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
+            LlenarCombo(cboAsignadoA, usuarioService.GetListUsuarios(false), "NombreUsuario", "IdUsuario");
 
             LlenarCombo(cboProductos, productoService.GetListProductos(false), "Nombre", "IdProducto");
 
