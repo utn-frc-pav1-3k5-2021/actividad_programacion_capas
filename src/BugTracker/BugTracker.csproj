@@ -49,10 +49,12 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\BugService.cs" />
     <Compile Include="BusinessLayer\CriticidadService.cs" />
+    <Compile Include="BusinessLayer\EstadoService.cs" />
     <Compile Include="BusinessLayer\ProductoService.cs" />
     <Compile Include="DataAccessLayer\BugDao.cs" />
     <Compile Include="DataAccessLayer\CriticidadDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\EstadoDao.cs" />
     <Compile Include="DataAccessLayer\ProductoDao.cs" />
     <Compile Include="Entities\Bug.cs" />
     <Compile Include="Entities\Criticidad.cs" />
