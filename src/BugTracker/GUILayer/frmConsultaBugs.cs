@@ -16,6 +16,7 @@ namespace BugTracker.GUILayer
     {
         private BugService bugService;
         private CriticidadService criticidadService;
+        private ProductoService productoService;
         public frmConsultaBugs()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace BugTracker.GUILayer
             InitializeDataGridView();
             bugService = new BugService();
             criticidadService = new CriticidadService();
+            productoService = new ProductoService();
         }
 
         private void frmBugs_Load(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace BugTracker.GUILayer
 
             LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
 
-            LlenarCombo(cboProductos, DataManager.GetInstance().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
+            LlenarCombo(cboProductos, productoService.GetListProductos(false), "Nombre", "IdProducto");
 
         }
 
@@ -110,13 +112,7 @@ namespace BugTracker.GUILayer
             cbo.SelectedIndex = -1;
         }
 
-        private void LlenarComboList(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-        }
+        
 
         private void InitializeDataGridView()
         {

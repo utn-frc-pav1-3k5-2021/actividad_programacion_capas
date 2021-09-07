@@ -16,7 +16,7 @@ namespace BugTracker.DataAccessLayer
                                            "FROM Criticidades c",
                                            "WHERE c.id_criticidad = " + idCriticidad.ToString()
                                             );
-            return this.MappingBug(DataManager.GetInstance().ConsultaSQL(strSql).Rows[0]);
+            return this.MappingCriticidad(DataManager.GetInstance().ConsultaSQL(strSql).Rows[0]);
         }
 
         public IList<Criticidad> GetListCriticidades(Boolean incluyeBorrados)
@@ -39,15 +39,13 @@ namespace BugTracker.DataAccessLayer
 
             foreach(DataRow fila in resultadoConsulta)
             {
-                Criticidad aux = new Criticidad();
-                aux.IdCriticidad = Convert.ToInt32(fila["id_criticidad"].ToString());
-                aux.Nombre = fila["nombre"].ToString();
-                criticidades.Add(aux);
+                
+                criticidades.Add(MappingCriticidad(fila));
             }
 
             return criticidades;
         }
-        private Criticidad MappingBug(DataRow row)
+        private Criticidad MappingCriticidad(DataRow row)
         {
             Criticidad criticidad = new Criticidad();
             criticidad.IdCriticidad = Convert.ToInt32(row["id_criticidad"].ToString());
