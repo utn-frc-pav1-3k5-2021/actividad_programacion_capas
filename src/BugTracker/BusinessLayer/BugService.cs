@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BugTracker.Entities;
 using BugTracker.DataAccessLayer;
+using System.Data;
 
 namespace BugTracker.BusinessLayer
 {
@@ -24,5 +25,31 @@ namespace BugTracker.BusinessLayer
         {
             return oBugDao.GetBugById(id);
         }
+
+        public DataTable ConsultarPrioridades()
+        {
+            return oBugDao.GetPrioridades();
+        }
+
+        public DataTable ConsultarCriticidades()
+        {
+            return oBugDao.GetCriticidades();
+        }
+
+        public DataTable ConsultarUsuarios()
+        {
+            return oBugDao.GetUsuarios();
+        }
+
+        public DataTable ConsultarProductos()
+        {
+            return oBugDao.GetProductos();
+        }
+
+        public DataTable ConsultarEstados()
+        {
+            return oBugDao.GetEstados();
+        }
+
     }
 }

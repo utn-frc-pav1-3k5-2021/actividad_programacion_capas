@@ -145,6 +145,41 @@ namespace BugTracker.DataAccessLayer
 
             return oBug;
         }
+
+        public DataTable GetPrioridades ()
+        {
+            var strSql = "Select * from Prioridades";
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQLSinParametros(strSql);
+            return resultadoConsulta;
+        }
+
+        public DataTable GetCriticidades()
+        {
+            var strSql = "Select * from Criticidades";
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQLSinParametros(strSql);
+            return resultadoConsulta;
+        }
+
+        public DataTable GetUsuarios()
+        {
+            var strSql = "Select * from Usuarios";
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQLSinParametros(strSql);
+            return resultadoConsulta;
+        }
+
+        public DataTable GetProductos()
+        {
+            var strSql = "Select * from Productos";
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQLSinParametros(strSql);
+            return resultadoConsulta;
+        }
+
+        public DataTable GetEstados()
+        {
+            var strSql = "Select * from Estados";
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQLSinParametros(strSql);
+            return resultadoConsulta;
+        }
     }
 
 }

@@ -159,4 +159,35 @@ public class DataManager
         }
     }
 
+
+    public DataTable ConsultaSQLSinParametros(string strSql)
+    {
+
+        SqlConnection dbConnection = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        DataTable tabla = new DataTable();
+        try
+        {
+
+            dbConnection.ConnectionString = string_conexion;
+            dbConnection.Open();
+            cmd.Connection = dbConnection;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = strSql;
+
+
+            tabla.Load(cmd.ExecuteReader());
+            return tabla;
+        }
+        catch (Exception ex)
+        {
+            throw (ex);
+        }
+        finally
+        {
+            if (dbConnection.State != ConnectionState.Closed)
+                dbConnection.Close();
+        }
+    }
+
 }

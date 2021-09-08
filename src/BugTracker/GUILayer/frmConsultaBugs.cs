@@ -28,15 +28,15 @@ namespace BugTracker.GUILayer
         {
 
             //LLenar combos y limpiar grid
-            //LlenarCombo(cboEstados, oEstadoService.ObtenerEstados(), "nombre", "id_estado");
+            LlenarCombo(cboEstados, bugService.ConsultarEstados(), "nombre", "id_estado");
 
-            LlenarCombo(cboPrioridades, DataManager.GetInstance().ConsultaSQL("Select * from Prioridades"), "nombre", "id_prioridad");
+            LlenarCombo(cboPrioridades, bugService.ConsultarPrioridades(), "nombre", "id_prioridad");
 
-            LlenarCombo(cboCriticidades, DataManager.GetInstance().ConsultaSQL("Select * from Criticidades"), "nombre", "id_criticidad");
+            LlenarCombo(cboCriticidades, bugService.ConsultarCriticidades(), "nombre", "id_criticidad");
 
-            LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
+            LlenarCombo(cboAsignadoA, bugService.ConsultarUsuarios(), "usuario", "id_usuario");
 
-            LlenarCombo(cboProductos, DataManager.GetInstance().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
+            LlenarCombo(cboProductos, bugService.ConsultarProductos(), "nombre", "id_producto");
 
         }
 
