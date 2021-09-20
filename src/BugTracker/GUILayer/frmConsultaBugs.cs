@@ -29,14 +29,22 @@ namespace BugTracker.GUILayer
 
             //LLenar combos y limpiar grid
             //LlenarCombo(cboEstados, oEstadoService.ObtenerEstados(), "nombre", "id_estado");
+            EstadoService oEstadoService = new EstadoService();
+            LlenarCombo(cboEstados, oEstadoService.ObtenerEstadoActivos(), "nombre", "IdEstado");
 
-            LlenarCombo(cboPrioridades, DataManager.GetInstance().ConsultaSQL("Select * from Prioridades"), "nombre", "id_prioridad");
+            //LlenarCombo(cboPrioridades, DataManager.GetInstance().ConsultaSQL("Select * from Prioridades"), "nombre", "id_prioridad");
 
-            LlenarCombo(cboCriticidades, DataManager.GetInstance().ConsultaSQL("Select * from Criticidades"), "nombre", "id_criticidad");
+            //LlenarCombo(cboCriticidades, DataManager.GetInstance().ConsultaSQL("Select * from Criticidades"), "nombre", "id_criticidad");
+            CriticidadService oCriticidadService = new CriticidadService();
+            LlenarCombo(cboCriticidades, oCriticidadService.ObtenerCriticidadesActivas(), "Nombre", "IdCriticidad");
 
-            LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
+            //LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
+            UsuarioService oUsuarioService = new UsuarioService();
+            LlenarCombo(cboAsignadoA, oUsuarioService.ObtenerUsuariosActivos(), "NombreUsuario", "IdUsuario");
 
-            LlenarCombo(cboProductos, DataManager.GetInstance().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
+            //LlenarCombo(cboProductos, DataManager.GetInstance().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
+            ProductoService oProductoService = new ProductoService();
+            LlenarCombo(cboProductos, oProductoService.ObtenerProductosActivos(), "Nombre", "IdProducto");
 
         }
 
