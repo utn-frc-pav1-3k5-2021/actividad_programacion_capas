@@ -183,5 +183,10 @@ namespace BugTracker.GUILayer
             // Cuando seleccionamos una fila de la grilla habilitamos el boton btnDetalleBug.
             btnDetalleBug.Enabled = true;
         }
+
+        private void pnl_filtros_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

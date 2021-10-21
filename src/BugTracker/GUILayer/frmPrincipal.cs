@@ -43,6 +43,26 @@ namespace BugTracker.GUILayer
             this.Close();
         }
 
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consultarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto frmProducto = new frmProducto();
+            frmProducto.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuarios = new FrmUsuario();
+            frmUsuarios.ShowDialog();
+        }
     }
 }

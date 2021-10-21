@@ -48,8 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\BugService.cs" />
+    <Compile Include="BusinessLayer\ProductoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\BugDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\ProductoDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Bug.cs" />
     <Compile Include="Entities\Criticidad.cs" />
     <Compile Include="Entities\Perfil.cs" />
@@ -81,6 +85,24 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmUsuarioABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmUsuarioABM.Designer.cs">
+      <DependentUpon>FrmUsuarioABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUILayer\frmConsultaBugs.resx">
@@ -94,6 +116,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmUsuarioABM.resx">
+      <DependentUpon>FrmUsuarioABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

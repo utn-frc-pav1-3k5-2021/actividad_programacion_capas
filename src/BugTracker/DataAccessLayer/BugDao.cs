@@ -76,7 +76,7 @@ namespace BugTracker.DataAccessLayer
                                       "  INNER JOIN Prioridades as prioridad ON  prioridad.id_prioridad = bug.id_prioridad",
                                       "  INNER JOIN Criticidades as criticidad ON criticidad.id_criticidad = bug.id_criticidad",
                                       "  INNER JOIN Estados as estado ON estado.id_estado = bug.id_estado",
-                                      "  WHERE 1=1 ");
+                                      "  WHERE u.borrado = 0 ");
 
             if (parametros.ContainsKey("fechaDesde") && parametros.ContainsKey("fechaHasta"))
                 strSql += " AND (fecha_alta>=@fechaDesde AND fecha_alta<=@fechaHasta) ";
